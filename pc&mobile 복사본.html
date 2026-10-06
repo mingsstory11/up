@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pc&mobile 반응형 만들기</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    ul{list-style: none;}
+    a{text-decoration: none; color: inherit;}
+
+    header{
+      width: 100%; 
+      border-bottom: 1px solid rgb(240, 240, 240);
+      
+    }
+    header .gnb{
+      width: 1140px;
+      height: 70px;
+      line-height: 70px;
+      margin: 0 auto;
+      display: flex;
+      /* align-items: center; */
+    }
+    header .gnb .logo{
+      font-size: 20px;
+      font-weight: bold;
+    }
+    header .gnb .nav{
+      margin-left: auto;
+      display: flex;
+      gap: 30px;
+      font-size: 18px;
+      color: #6d6d6d;
+    }
+
+
+    main{width: 1140px; margin: 0 auto;}
+
+    .main-visual{
+      width:100%; 
+      height: 400px;
+      display: flex;
+      margin-top: 100px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .main-text{
+      width: 400px;
+    }
+    .main-text h2{
+      font-size: 38px;
+      margin-bottom: 20px; ;
+    }
+
+    .sub-text{
+      font-size: 20px;
+      line-height: 1.7;
+      color: #6d6d6d;
+    }
+    .bnt{
+      display: inline-block;
+      margin-top: 20px;
+      width: 100px;
+      height: 45px;
+      line-height: 45px;
+      text-align: center;
+      border-radius: 5px;
+      background-color: #d9211e;
+      color: #fff;
+    }
+    .main-img{
+      width: 570px;
+      height: 380px;
+    }
+    .main-img img{
+      width: 100%;
+      display: block;
+      border-radius: 10px;
+    }
+
+
+    .cont2{
+      margin-top: 150px;
+    }
+    .cont2-in{
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    .cont2 li{
+      width: 360px;
+      position: relative;
+    }
+    .cont2 img{
+      width: 360px; height: 280px;
+      border-radius: 10px;
+      display: block;
+    }
+    .cont2 li p{
+      font-size: 17px;
+      font-weight: 700;
+      position: absolute;
+      left: 0; top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      justify-content: center;
+      line-height: 70px;
+      background-color: #fff;
+      width: 100%;
+      opacity: 60%;
+    }
+
+    .cont3{
+      margin-top: 150px;
+      /* margin-bottom: 50px; */
+      
+    }
+    .cont3-in{
+      /* width: 100%; */
+      height: 280px;
+      display: flex;
+      padding: 20px;
+      justify-content: space-between;
+      margin-top: 20px;
+      background-color: antiquewhite;
+    }
+
+    .cont3 .cont3-in li{
+      width: 360px;
+      height: 280px;
+      position: relative;
+    }
+    .cont3 .cont3-in img{
+      width: 360px; height: 280px;
+      display: block;
+      border-radius: 10px;
+    }
+
+    .cont3 .cont3-in li p{
+      width: 150px;
+      height: 35px;
+      position: absolute;
+      left: 50%; bottom: 0;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      border-radius: 25px 25px 0 0;
+      
+    }
+    footer{
+      width: 100%; height: 180px;
+      background-color: rgb(37, 37, 37);
+      margin-top: 100px;
+      padding: 40px 0;
+    }
+    footer .copy{
+      text-align: center;
+    }
+    footer .copy h2{
+      font-size: 20px;
+      margin-top: 15px;
+      margin-bottom: 15px;  
+      color: #fff;
+    }
+    .copy p{
+      font-size: 17px;
+      color: #abaaaa;
+      line-height: 25px;
+    }
+
+    @media screen and (max-width:1024px) {
+      
+      header .gnb{
+        width: 90%;
+      }
+      main{
+        width: 90%;
+      }
+
+      .main-visual{
+        height: auto;
+        margin-top: 70px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .main-text{
+        width: 100%;
+      }
+      .main-img{
+        width: 100%;
+        height: auto;
+        margin-top: 40px;
+      }
+      .main-img img{ width: 100%;}
+
+      .cont2{
+        margin-top: 120px;
+      }
+      .cont2-in{
+        flex-direction: column;
+        gap: 20px;
+      }
+      .cont2-in li{
+        width: 100%;
+      }
+      .cont2-in li img{
+        width: 100%; height: auto;
+      }
+
+      .cont3{ margin-top: 120px;}
+      .cont3 .cont3-in{
+        width: auto;
+        height: auto;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .cont3 .cont3-in li{
+        width: 100%; height: auto;
+      }
+      .cont3 .cont3-in img{
+        width: 100%;
+        height: auto;
+      }
+
+      footer h2, footer p{
+        width: 100%;
+      }
+      
+    }
+
+    
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <ul class="gnb">
+      <li class="logo"><a href="#">BREW & CO</a></li>
+      <li class="nav">
+        <a href="#">메뉴</a>
+        <a href="#">소개</a>
+        <a href="#">문의</a>
+      </li>
+    </ul>
+  </header>
+
+  <main>
+    <section class="main-visual">
+      <div class="main-text">
+        <h2>달콤한 도넛처럼</h2>
+
+        <p class="sub-text">
+          바쁜 도시의 흐름 속에서<br> 
+          일상이 잠시 휴가처럼 느껴지는 순간,<br> 
+          도심 속 작은 쉼표를 전합니다.
+        </p>
+        <a href="#" class="bnt">메뉴보기</a>
+      </div>
+      <div class="main-img">
+          <img src="https://images.unsplash.com/photo-1509474520651-53cf6a80536f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="도넛1">
+      </div>
+    </section>
+
+    <section class="cont2">
+      <h2>왜 우리인가?</h2>
+        <ul class="cont2-in">
+          <li>
+            <img src="https://images.unsplash.com/photo-1543512601-f0b56be2147e?q=80&w=684&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="도넛2">
+            <p>스폐셜 도넛</p>
+          </li>
+          <li>
+            <img src="https://images.unsplash.com/photo-1648748005716-f52ba766054d?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="도넛3">
+            <p>매일 베이커리</p>
+          </li>
+          <li>        
+            <img src="https://images.unsplash.com/photo-1643116218883-d5cb85ef840e?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="도넛4">
+            <p>편안한 공간</p>
+          </li>
+        </ul>
+    </section>
+
+    <section class="cont3">
+      <h2>인기 메뉴</h2>
+        <ul class="cont3-in">
+          <li>
+            <img src="https://images.unsplash.com/photo-1709188866085-923eb283a55a?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="오리지널 도넛">
+            <p>오리지널 도넛</p>
+          </li>
+          <li>
+            <img src="https://images.unsplash.com/photo-1630150275481-fdd323506564?q=80&w=1208&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="초코도넛">
+            <p>초코 도넛</p>
+          </li>
+          <li>
+            <img src="https://images.unsplash.com/photo-1769372742160-488b07674729?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="크림도넛">
+            <p>크림도넛</p>
+          </li>
+        </ul>
+      </li>
+    </section>
+  </main>
+
+  <footer>
+    <div class="copy">
+      <h2>BREW & CO</h2>
+      <p>서울 마포구 연남동<br>
+      2026 All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
