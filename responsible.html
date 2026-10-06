@@ -20,7 +20,6 @@
       line-height: 70px;
       margin: 0 auto;
       display: flex;
-      /* align-items: center; */
     }
     header .gnb .logo{
       font-size: 20px;
@@ -34,131 +33,96 @@
       color: #6d6d6d;
     }
 
+    /* -----header End----- */
+    
+    main{
+      width: 90%; margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 100px;
+    }
 
-    main{width: 90%; margin: 0 auto;}
 
     .main-visual{
-      width:100%; 
-      height: 400px;
-      display: flex;
-      margin-top: 100px;
-      justify-content: space-between;
-      align-items: center;
+      width: 100%;
+      display: grid;
+      gap: 10%;
+      grid-template-columns: repeat(2, 1fr);
+      /* margin-top: 50px; */
     }
 
     .main-text{
-      width: 400px;
-    }
-    .main-text h2{
-      font-size: 38px;
-      margin-bottom: 20px; ;
+      width: 100%;
+      height: 30%;
+      padding-top: 20%;
+      /* background-color: #7c5858; */
+      display: grid;
+      gap: 20%;
+      grid-template-columns: repeat(1, 1fr);
     }
 
-    .sub-text{
-      font-size: 20px;
-      line-height: 1.7;
-      color: #6d6d6d;
+    .main-text h2{
+      font-size: clamp(2rem, 4vw, 4rem);
     }
-    .bnt{
-      display: inline-block;
-      margin-top: 20px;
-      width: 100px;
-      height: 45px;
-      line-height: 45px;
+
+    .main-text .sub-text{
+      font-size: clamp(0.8rem, 2vw, 1.4rem);
+
+    }
+
+    .btn{
+      width: 20%;
+      height: 40px;
+      line-height: 40px;
+      border-radius: 10px;
       text-align: center;
-      border-radius: 5px;
-      background-color: #d9211e;
-      color: #fff;
+      cursor: pointer;
+      background-color: #f0cece;
+
+      font-size: clamp(0.7rem, 1.4vw, 1rem);
     }
-    .main-img{
-      width: 570px;
-      height: 380px;
-    }
+
     .main-img img{
       width: 100%;
-      display: block;
+      aspect-ratio: 4 / 3;
       border-radius: 10px;
+      object-fit: cover;
+      margin-top: 10%;
+    }
+
+    .cont2-in, .cont3-in{
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2%;
     }
 
 
-    .cont2{
-      margin-top: 150px;
-    }
-    .cont2-in{
-      display: flex;
-      justify-content: space-between;
-      margin-top: 20px;
-    }
-    .cont2 li{
-      width: 360px;
+    .cont2-in > li, 
+    .cont3-in > li{
       position: relative;
     }
-    .cont2 img{
-      width: 360px; height: 280px;
-      border-radius: 10px;
-      display: block;
 
-      aspect-ratio: 4/3;
-      object-fit: cover;
-    }
-    .cont2 li p{
-      font-size: 17px;
-      font-weight: 700;
+    .cont2-in > li p,
+    .cont3-in > li p{
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      background-color: #ffffff8e;
+      text-align: center;
       position: absolute;
-      left: 0; top: 50%;
+      top: 50%; left: 0;
       transform: translateY(-50%);
-      display: flex;
-      justify-content: center;
-      line-height: 70px;
-      background-color: #fff;
+    }
+    .cont2-in img, .cont3-in img{
       width: 100%;
-      opacity: 60%;
-    }
-
-    .cont3{
-      width: 90%;
-      margin-top: 150px;
-      /* margin-bottom: 50px; */
-      background-color: antiquewhite;
-    }
-
-
-    .cont3-in{
-      width: 100%;
-
-      display: flex;
-      gap: 20px;
-      padding: 20px;
-      margin-top: 20px;
-    }
-
-    .cont3 .cont3-in li{
-      width: 100%;
-      position: relative;
-    }
-    .cont3 .cont3-in img{
-      width: 360px; 
-      height: 280px;
-      display: block;
+      aspect-ratio: 4 / 3;
       border-radius: 10px;
-
-      aspect-ratio: 1 / 1;
       object-fit: cover;
     }
 
-    .cont3 .cont3-in li p{
-      width: 150px;
-      height: 35px;
-      position: absolute;
-      left: 50%; bottom: 0;
-      transform: translateX(-50%);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #fff;
-      border-radius: 25px 25px 0 0;
-      
-    }
+
+
     footer{
       width: 100%; height: 180px;
       background-color: rgb(37, 37, 37);
@@ -180,58 +144,16 @@
       line-height: 25px;
     }
 
-    @media screen and (max-width:550px) {
+    @media (max-width:550px) {
   
 
+
       .main-visual{
-        height: auto;
-        margin-top: 70px;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .main-text{
-        width: 100%;
-      }
-      .main-img{
-        width: 100%;
-        height: auto;
-        margin-top: 40px;
-      }
-      .main-img img{ width: 100%;}
-
-      .cont2{
-        margin-top: 120px;
-      }
-      .cont2-in{
-        flex-direction: column;
-        gap: 20px;
-      }
-      .cont2-in li{
-        width: 100%;
-      }
-      .cont2-in li img{
-        width: 100%; height:auto;
+        grid-template-columns: repeat(1, 1fr);
       }
 
-      .cont3{ margin-top: 120px;}
-      .cont3 .cont3-in{
-        width: auto;
-        height: auto;
-        flex-direction: column;
-        gap: 20px;
-      }
-      .cont3 .cont3-in li{
-        width: 100%; height: auto;
-      }
-      .cont3 .cont3-in img{
-        width: 100%;
-        /* height: 480px; */
-
-      
-      }
-
-      footer h2, footer p{
-        width: 100%;
+      .cont2-in, .cont3-in{
+        grid-template-columns: repeat(1, 1fr);
       }
       
     }
@@ -267,7 +189,7 @@
           일상이 잠시 휴가처럼 느껴지는 순간,<br> 
           도심 속 작은 쉼표를 전합니다.
         </p>
-        <a href="#" class="bnt">메뉴보기</a>
+        <p href="#" class="btn">메뉴보기</p>
       </div>
       <div class="main-img">
           <img src="https://images.unsplash.com/photo-1509474520651-53cf6a80536f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="도넛1">
